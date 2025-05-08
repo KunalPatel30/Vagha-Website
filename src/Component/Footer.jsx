@@ -56,7 +56,10 @@ function Footer() {
                 </div>
                 <div className="row g-5 mb-5">
                     <div className="col-lg-4">
-                        <div className="mb-4 footer-logo-wrap"><a href="#" className="footer-logo">ShreeHari<span>Vagha Collection</span></a></div>
+                        <div className="mb-4 footer-logo-wrap d-flex align-items-center">
+                            <img src="./src/assets/images/Logo/footer-logo.png" alt="Logo" style={{ height: "90px", marginRight: "10px" }} />
+                            <a href="#" className="footer-logo mt-2">ShreeHari<span>Vagha Collection</span></a>
+                        </div>
                         <p className="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant</p>
                         <ul className="list-unstyled custom-social">
                             <li><a href="#"><span className="fa fa-brands fa-facebook-f" /></a></li>

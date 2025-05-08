@@ -29,8 +29,8 @@ function Header({cartCount}) {
         <nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
             <div className="container">
                 {/* <a className="navbar-brand" href="/">ShreeHari<span>Vagha Collection</span></a> */}
-                <img src="./src/assets/images/Logo/logo-1.png" alt="Logo" style={{ height: "90px", marginRight: "10px" }} />
-                <a className="navbar-brand" href="/">
+                <img src="./src/assets/images/Logo/logo.png" alt="Logo" style={{ height: "90px", marginRight: "10px" }} />
+                <a className="navbar-brand mt-2" href="/">
                     ShreeHari<span>Vagha Collection</span>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
