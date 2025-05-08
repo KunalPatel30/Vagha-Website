@@ -1,0 +1,125 @@
+{
+  "user": [
+    {
+      "id": "2ad1",
+      "userid": "1745994314979",
+      "username": "Kunal Patel",
+      "email": "k@gmail.com",
+      "password": "2405",
+      "phone": "7984846113",
+      "status": "Unblock"
+    },
+    {
+      "id": "6feb",
+      "userid": "1746078154297",
+      "username": "Parth Shinde",
+      "email": "p@gmail.com",
+      "password": "1234",
+      "phone": "4567654234",
+      "status": "Unblock"
+    }
+  ],
+  "contact": [
+    {
+      "id": "1744965646617",
+      "fname": "Kunal",
+      "lname": "Patel",
+      "email": "k@patel.com",
+      "message": "test"
+    }
+  ],
+  "subscription": [],
+  "product": [
+    {
+      "id": "1684367846573",
+      "name": "Green Dhoti Collection",
+      "image": "/src/assets/images/products/Green Dhoti Collection-1.png",
+      "image1": "/src/assets/images/products/Green Dhoti Collection-2.png",
+      "image2": "/src/assets/images/products/Green Dhoti Collection-3.png",
+      "image3": "/src/assets/images/products/Green Dhoti Collection-4.png",
+      "description": "",
+      "price": "650",
+      "alt": "Green",
+      "qty": 1
+    },
+    {
+      "id": "1684319839617",
+      "name": "Maharaja Collection Yellow & Red",
+      "image": "/src/assets/images/products/Maharaja Collection Yellow & Red.png",
+      "image1": "/src/assets/images/products/Maharaja Collection Parrot & Sky.png",
+      "image2": "/src/assets/images/products/Maharaja Collection Light Pink.png",
+      "image3": "/src/assets/images/products/Maharaja Collection Mahendi.png",
+      "description": "",
+      "price": "800",
+      "alt": "Yellow & Red",
+      "qty": 1
+    },
+    {
+      "id": "1685160853697",
+      "name": "Maharaja Collection Parrot & Sky",
+      "image": "/src/assets/images/products/Maharaja Collection Parrot & Sky.png",
+      "description": "",
+      "price": "1000",
+      "alt": "Parrot & Sky",
+      "qty": 1
+    },
+    {
+      "id": "1685161021658",
+      "name": "Maharaja Collection Light Pink",
+      "image": "/src/assets/images/products/Maharaja Collection Light Pink.png",
+      "description": "",
+      "price": "600",
+      "alt": "Light Pink",
+      "qty": 1
+    },
+    {
+      "id": "1685506383124",
+      "name": "Maharaja Collection Mahendi",
+      "image": "/src/assets/images/products/Maharaja Collection Mahendi.png",
+      "description": "",
+      "price": "700",
+      "alt": "Mahendi",
+      "qty": 1
+    },
+    {
+      "id": "1744006260538",
+      "name": "Maharaja Collection Saffron & Green",
+      "image": "/src/assets/images/products/Maharaja Collection Saffron & Green.png",
+      "description": "",
+      "price": "900",
+      "alt": "Saffron & Green",
+      "qty": 1
+    },
+    {
+      "id": "1744026799472",
+      "name": "Maharaja Collection Light blue",
+      "image": "/src/assets/images/products/Maharaja Collection Light blue.png",
+      "description": "",
+      "price": "700",
+      "alt": "Light blue",
+      "qty": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": "1746178315892",
+      "userId": "1745994314979",
+      "name": "Maharaja Collection Yellow & Red",
+      "image": "/src/assets/images/products/Maharaja Collection Yellow & Red.png",
+      "description": "",
+      "price": "800",
+      "alt": "Yellow & Red",
+      "qty": 1
+    },
+    {
+      "id": "1746190029002",
+      "userId": "1745994314979",
+      "name": "Maharaja Collection Parrot & Sky",
+      "image": "/src/assets/images/products/Maharaja Collection Parrot & Sky.png",
+      "description": "",
+      "price": "1000",
+      "alt": "Parrot & Sky",
+      "qty": 1
+    }
+  ]
+}
