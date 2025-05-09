@@ -30,6 +30,7 @@ function Header({cartCount}) {
             <div className="container">
                 {/* <a className="navbar-brand" href="/">ShreeHari<span>Vagha Collection</span></a> */}
                 <img src="./src/assets/images/Logo/logo-1.png" alt="Logo" style={{ height: "80px" }} />
+                {/* <img src="./src/assets/images/Logo/brand-logo.png" alt="Logo" style={{ height: "80px" }} /> */}
                 <a className="navbar-brand mt-3" href="/">
                     ShreeHari<span>Vagha Collection</span>
                 </a>
@@ -91,4 +92,4 @@ function Header({cartCount}) {
   )
 }
 
-export default Header
+export default Header;

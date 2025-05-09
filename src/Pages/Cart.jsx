@@ -6,7 +6,7 @@ import PageHeader from '../Component/PageHeader';
 
 function Cart({ updateCartCount }) {
 
-    const[alldata, setAlldata]= useState([]);
+    const[allData, setAllData]= useState([]);
 
     useEffect(() => {
         fetch();
@@ -14,11 +14,11 @@ function Cart({ updateCartCount }) {
 
     const fetch = async () => {
         const res = await axios.get(`http://localhost:3000/cart?userId=${localStorage.getItem("userid")}`);
-        setAlldata(res.data);
+        setAllData(res.data);
     }
 
     // delete
-    const ondelete = async (id) => {
+    const onDelete = async (id) => {
         const res = await axios.delete(`http://localhost:3000/cart/${id}`);
         if(res.status == 200) {
             toast.success('Product Remove Success');
@@ -30,8 +30,8 @@ function Cart({ updateCartCount }) {
     // Increment
     const increaseQuantity = async (index) => {
         const updatedProduct = {
-            ...alldata[index],
-            qty: alldata[index].qty + 1
+            ...allData[index],
+            qty: allData[index].qty + 1
         };
         await axios.put(`http://localhost:3000/cart/${updatedProduct.id}`, updatedProduct);
         fetch();
@@ -40,10 +40,10 @@ function Cart({ updateCartCount }) {
 
     // Decrement
     const decreaseQuantity = async (index) => {
-        if (alldata[index].qty > 1) {
+        if (allData[index].qty > 1) {
             const updatedProduct = {
-                ...alldata[index],
-                qty: alldata[index].qty - 1
+                ...allData[index],
+                qty: allData[index].qty - 1
             };
             await axios.put(`http://localhost:3000/cart/${updatedProduct.id}`, updatedProduct);
             fetch();
@@ -52,8 +52,8 @@ function Cart({ updateCartCount }) {
     };
 
     // Total Qty, Total Amount, Shipping Charge
-    // const cartTotalQty = alldata.reduce((acc, data) => acc + data.qty, 0);
-    const cartTotalAmount = alldata.reduce((acc, data) => acc + data.price * data.qty, 0);
+    // const cartTotalQty = allData.reduce((acc, data) => acc + data.qty, 0);
+    const cartTotalAmount = allData.reduce((acc, data) => acc + data.price * data.qty, 0);
     const shippingCharge = 45;
 
 
@@ -67,7 +67,7 @@ function Cart({ updateCartCount }) {
 
         <div className="cart-section">
             <div className="container">
-                { alldata.length === 0 ? (
+                { allData.length === 0 ? (
                     <div className="col-12 text-center">
                         <h2>Your cart is empty</h2>
                         <p>Looks like you haven’t added anything to your cart yet.</p>
@@ -90,7 +90,7 @@ function Cart({ updateCartCount }) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            { alldata.map((item, index) => {
+                                            { allData.map((item, index) => {
                                                 return (
                                                     <tr key={item.id}>
                                                         <td className="product-thumbnail">
@@ -112,7 +112,7 @@ function Cart({ updateCartCount }) {
                                                             </div>
                                                         </td>
                                                         <td>₹{(item.qty * item.price).toFixed(0)}</td>
-                                                        <td><Link href="#" onClick={()=>ondelete(item.id)} className="btn btn-black btn-sm">X</Link></td>
+                                                        <td><Link href="#" onClick={()=>onDelete(item.id)} className="btn btn-black btn-sm">X</Link></td>
                                                     </tr>
                                                 )
                                             })}

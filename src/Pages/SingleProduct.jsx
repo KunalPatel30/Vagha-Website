@@ -141,7 +141,7 @@ function SingleProduct({ updateCartCount }) {
                         <span> 4.7(21)</span>
                     </div>
                     <div className="product-price">
-                        {/* <p class = "last-price">Old Price: <span>$257.00</span></p> */}
+                        {/* <p className = "last-price">Old Price: <span>$257.00</span></p> */}
                         <p className="new-price">Price: ₹{item.price}</p>
                     </div>
                     <div className="product-detail">

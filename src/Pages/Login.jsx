@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 function Login() {
 
-  const [formvalue, setFormvalue] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
@@ -21,16 +21,16 @@ function Login() {
   const redirect = useNavigate();
 
   const onchange = (e) => {
-    setFormvalue({ ...formvalue, [e.target.name]:e.target.value })
+    setFormData({ ...formData, [e.target.name]:e.target.value })
   }
 
   function validate(){
     var result = true;
-    if(!formvalue.email){
+    if(!formData.email){
       result = false;
       toast.error('Email Field Required');
     }
-    if(!formvalue.password){
+    if(!formData.password){
       result = false;
       toast.error('Password Field Required');
     }
@@ -40,29 +40,29 @@ function Login() {
   const onsubmit = async (e) => {
     e.preventDefault();
     if(validate()) {
-      const res = await axios.get(`http://localhost:3000/user?email=${formvalue.email}`);
+      const res = await axios.get(`http://localhost:3000/user?email=${formData.email}`);
       if(res.data.length > 0){
-        if(res.data[0].password == formvalue.password){
+        if(res.data[0].password == formData.password){
           if(res.data[0].status == "Unblock"){
             localStorage.setItem('userid', res.data[0].userid);
             localStorage.setItem('username', res.data[0].username);
             toast.success('Login Successful!');
-            setFormvalue({...formvalue, email:"", password:""});
+            setFormData({...formData, email:"", password:""});
             return redirect('/');
           }
           else{
             toast.error('Login Failed: User is blocked')
-            setFormvalue({...formvalue, email:"", password:""});
+            setFormData({...formData, email:"", password:""});
           }
         }
         else{
           toast.error('Login Failed: Incorrect password')
-          setFormvalue({...formvalue, email:"", password:""});
+          setFormData({...formData, email:"", password:""});
         }
       }
       else{
         toast.error('Login Failed: Incorrect email')
-        setFormvalue({...formvalue, email:"", password:""});
+        setFormData({...formData, email:"", password:""});
       }
     }
   }
@@ -74,8 +74,8 @@ function Login() {
           <div className="form-panel">
             <h3 className="title">Login</h3>
             <form className="login-form">
-              <input type="text" name='email' value={formvalue.email} onChange={onchange} placeholder="Enter Your Email" />
-              <input type="password" name='password' value={formvalue.password} onChange={onchange} placeholder="Enter Your Password" />
+              <input type="text" name='email' value={formData.email} onChange={onchange} placeholder="Enter Your Email" />
+              <input type="password" name='password' value={formData.password} onChange={onchange} placeholder="Enter Your Password" />
               <a href="#" className="forgot">Forgot password?</a>
               <button className="lr-btn" type="submit" onClick={onsubmit}>SIGN IN</button>
               <p className="signup">Don't have an account? <Link to="/register">Create Account</Link></p>

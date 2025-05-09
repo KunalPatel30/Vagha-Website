@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Contact() {
 
-    const [formvalue, setFormvalue] = useState({
+    const [formData, setFormData] = useState({
         id:"",
         fname: "",
         lname: "",
@@ -14,24 +14,24 @@ function Contact() {
     });
 
     const onchange = (e) => {
-        setFormvalue({...formvalue, id: new Date().getTime().toString(), [e.target.name]:e.target.value});
+        setFormData({...formData, id: new Date().getTime().toString(), [e.target.name]:e.target.value});
     }
 
     function validate () {
         var result =  true;
-        if(formvalue.fname == "" || formvalue.fname == null){
+        if(formData.fname == "" || formData.fname == null){
             result = false;
             toast.error('First Name field required');
         }
-        if(formvalue.lname == "" || formvalue.lname == null){
+        if(formData.lname == "" || formData.lname == null){
             result = false;
             toast.error('Last Name field required');
         }
-        if(formvalue.email == "" || formvalue.email == null){
+        if(formData.email == "" || formData.email == null){
             result = false;
             toast.error('Email field required');
         }
-        if(formvalue.message == "" || formvalue.message == null){
+        if(formData.message == "" || formData.message == null){
             result = false;
             toast.error('Message field required');
         }
@@ -41,10 +41,10 @@ function Contact() {
     const onsubmit = async (e) => {
         e.preventDefault();
         if(validate()){
-            const res = await axios.post(`http://localhost:3000/contact`, formvalue);
+            const res = await axios.post(`http://localhost:3000/contact`, formData);
             if(res.status == 201){
                 toast.success('Contact Succesfull');
-                setFormvalue({...formvalue, fname:"", lname:"", email:"", message:""});
+                setFormData({...formData, fname:"", lname:"", email:"", message:""});
             }
         }
     }
@@ -109,23 +109,23 @@ function Contact() {
                                     <div className="col-6 pb-3">
                                         <div className="form-group">
                                             <label className="text-black" htmlFor="fname">First name</label>
-                                            <input type="text" className="form-control" id="fname" name="fname" value={formvalue.fname} onChange={onchange} />
+                                            <input type="text" className="form-control" id="fname" name="fname" value={formData.fname} onChange={onchange} />
                                         </div>
                                     </div>
                                     <div className="col-6 pb-3">
                                         <div className="form-group">
                                             <label className="text-black" htmlFor="lname">Last name</label>
-                                            <input type="text" className="form-control" id="lname" name="lname" value={formvalue.lname} onChange={onchange} />
+                                            <input type="text" className="form-control" id="lname" name="lname" value={formData.lname} onChange={onchange} />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="form-group pb-3">
                                     <label className="text-black" htmlFor="email">Email address</label>
-                                    <input type="email" className="form-control" id="email" name="email" value={formvalue.email} onChange={onchange} />
+                                    <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={onchange} />
                                 </div>
                                 <div className="form-group mb-5">
                                     <label className="text-black" htmlFor="message">Message</label>
-                                    <textarea className="form-control" id="message" name="message" value={formvalue.message} onChange={onchange} cols={30} rows={5} />
+                                    <textarea className="form-control" id="message" name="message" value={formData.message} onChange={onchange} cols={30} rows={5} />
                                 </div>
                                 <button type="submit" className="btn btn-primary-hover-outline" onClick={onsubmit}>Send Message</button>
                             </form>

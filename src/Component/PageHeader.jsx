@@ -12,7 +12,7 @@ function PageHeader(props) {
                     <div className="col-lg-5">
                         <div className="intro-excerpt">
                             {/* <h5 style={{ lineHeight: 1.5 }}>Welcome to,<br/>ShreeHari Vagha Collection</h5> */}
-                            <h1>{heading} <span clsas="d-block">{heading2}</span></h1>
+                            <h1>{heading} <span className="d-block">{heading2}</span></h1>
                             <p className="mb-4">Get our designer vagha only in our online and offline stores!</p>
                             <p>
                                 {button1Text && (

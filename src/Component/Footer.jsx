@@ -5,21 +5,21 @@ import { toast } from 'react-toastify';
 
 function Footer() {
 
-    const [formvalue, setFormvalue] = useState({
+    const [formData, setFormData] = useState({
         name: "",
         email: ""
     })
      
     const onchange = (e) => {
-        setFormvalue({...formvalue, [e.target.name]:e.target.value});
+        setFormData({...formData, [e.target.name]:e.target.value});
     }
 
     const onsubmit = async (e) => {
         e.preventDefault();
-        const res = await axios.post(`http://localhost:3000/subscription`, formvalue);
+        const res = await axios.post(`http://localhost:3000/subscription`, formData);
         if (res.status == 201){
             toast.success('Subscription Successful!');
-            setFormvalue({...formvalue, name: "", email:""});
+            setFormData({...formData, name: "", email:""});
         }
     }
 
@@ -41,10 +41,10 @@ function Footer() {
                             </h3>
                             <form action="#" className="row g-3">
                                 <div className="col-auto">
-                                    <input type="text" name='name' onChange={onchange} value={formvalue.name} className="form-control" placeholder="Enter your name" />
+                                    <input type="text" name='name' onChange={onchange} value={formData.name} className="form-control" placeholder="Enter your name" />
                                 </div>
                                 <div className="col-auto">
-                                    <input type="email" name='email' onChange={onchange} value={formvalue.email} className="form-control" placeholder="Enter your email" />
+                                    <input type="email" name='email' onChange={onchange} value={formData.email} className="form-control" placeholder="Enter your email" />
                                 </div>
                                 <div className="col-auto">
                                     <button className="btn btn-primary" onClick={onsubmit}>
