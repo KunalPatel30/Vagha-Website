@@ -12,6 +12,7 @@ import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import SingleProduct from "./Pages/SingleProduct";
 import Register from "./Pages/Register";
+import ScrollToTop from "./Component/ScrollTop";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
     <>
       <ToastContainer position="top-center" />
       {!hideHeaderFooter && <Header cartCount={cartCount}/>}
+      <ScrollToTop/>
       <Routes>
         <Route index path="/" element={<Home updateCartCount={updateCartCount}/>}></Route>
         <Route path="/about" element={<About/>}></Route>

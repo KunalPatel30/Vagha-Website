@@ -2,15 +2,7 @@ import React from 'react'
 
 function PageHeader(props) {
 
-    const {
-        heading,
-        heading2,
-        image,
-        button1Text,
-        button1Link,
-        button2Text,
-        button2Link,
-      } = props;
+    const { heading, heading2, image, button1Text, button1Link, button2Text, button2Link } = props;
 
   return (
     <>
@@ -44,4 +36,4 @@ function PageHeader(props) {
   )
 }
 
-export default PageHeader
+export default PageHeader;

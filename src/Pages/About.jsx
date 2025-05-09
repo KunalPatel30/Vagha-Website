@@ -5,7 +5,7 @@ function About() {
   return (
     <>
         {/* Start Hero Section */}
-        <PageHeader heading="About Us" image="./src/assets/images/about-bg.png"/>
+        <PageHeader heading="About Us" image="./src/assets/images/about-bg-1.png"/>
         {/* End Hero Section */}
 
         <div className="why-choose-section">
