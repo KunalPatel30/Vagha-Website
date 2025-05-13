@@ -11,7 +11,6 @@ function SingleProduct({ updateCartCount }) {
     const [qty, setQty] = useState(1);
     const navigate = useNavigate();
 
-
     useEffect(() => {
         fetch(`http://localhost:3000/product/${id}`)
         .then(res => res.json())
@@ -71,7 +70,7 @@ function SingleProduct({ updateCartCount }) {
         const res = await axios.get(`http://localhost:3000/cart?userId=${userId}`);
     
         // Step 2: Check if this product already exists in their cart (by name)
-        const existingProduct = res.data.find(item => item.name === product.name);
+        const existingProduct = res.data.find(item => item.id === product.id);
     
         // Step 3: Clone product and remove unwanted images
         const cleanProduct = { ...product };
@@ -81,7 +80,7 @@ function SingleProduct({ updateCartCount }) {
         delete cleanProduct.image4; 
     
         if (!existingProduct) {
-            await axios.post('http://localhost:3000/cart', { userId, ...cleanProduct, qty, id: Date.now().toString() });
+            await axios.post('http://localhost:3000/cart', { userId, ...cleanProduct, qty });
         } 
         else {
             await axios.put(`http://localhost:3000/cart/${existingProduct.id}`, { ...existingProduct, qty: existingProduct.qty + qty });

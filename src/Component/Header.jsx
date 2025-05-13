@@ -29,8 +29,7 @@ function Header({cartCount}) {
         <nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
             <div className="container">
                 {/* <a className="navbar-brand" href="/">ShreeHari<span>Vagha Collection</span></a> */}
-                <img src="./src/assets/images/Logo/logo-1.png" alt="Logo" style={{ height: "80px" }} />
-                {/* <img src="./src/assets/images/Logo/brand-logo.png" alt="Logo" style={{ height: "80px" }} /> */}
+                <img src="./src/assets/images/Logo/logo-1.png" alt="Logo" style={{ height: "70px" }} />
                 <a className="navbar-brand mt-3" href="/">
                     ShreeHari<span>Vagha Collection</span>
                 </a>
@@ -77,7 +76,7 @@ function Header({cartCount}) {
                             }
                         })()}
                         <li className={`nav-item ${activePath === '/cart' ? 'active' : ''}`} style={{ position: 'relative' }}>
-                            <Link className="nav-link" to="/cart" onClick={() => handleNavClick('/cart')}>
+                            <Link className="nav-link" to="/cart" onClick={() => handleNavClick('/cart')} style={{display: 'inline-block'}}>
                                 <img src="./src/assets/images/cart.svg" />
                                 <span style={{ position: 'absolute', top: '3px', right: '-5px', background: '#fff', color: '#3b5d50', borderRadius: '50%', width: '20px', height: '20px', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     {cartCount}

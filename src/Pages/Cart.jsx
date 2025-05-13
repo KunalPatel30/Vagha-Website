@@ -94,7 +94,9 @@ function Cart({ updateCartCount }) {
                                                 return (
                                                     <tr key={item.id}>
                                                         <td className="product-thumbnail">
-                                                            <img src={item.image} alt="Image" className="img-fluid" />
+                                                            <Link to={`/singleProduct/${item.id}`}>
+                                                                <img src={item.image} alt="Image" className="img-fluid" />
+                                                            </Link>
                                                         </td>
                                                         <td className="product-name">
                                                             <h2 className="h5 text-black">{item.name}</h2>

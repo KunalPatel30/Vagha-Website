@@ -102,23 +102,23 @@
   ],
   "cart": [
     {
-      "id": "1746178315892",
+      "id": "1684367846573",
+      "userId": "1745994314979",
+      "name": "Green Dhoti Collection",
+      "image": "/src/assets/images/products/Green Dhoti Collection-1.png",
+      "description": "",
+      "price": "650",
+      "alt": "Green",
+      "qty": 1
+    },
+    {
+      "id": "1684319839617",
       "userId": "1745994314979",
       "name": "Maharaja Collection Yellow & Red",
       "image": "/src/assets/images/products/Maharaja Collection Yellow & Red.png",
       "description": "",
       "price": "800",
       "alt": "Yellow & Red",
-      "qty": 1
-    },
-    {
-      "id": "1746190029002",
-      "userId": "1745994314979",
-      "name": "Maharaja Collection Parrot & Sky",
-      "image": "/src/assets/images/products/Maharaja Collection Parrot & Sky.png",
-      "description": "",
-      "price": "1000",
-      "alt": "Parrot & Sky",
       "qty": 1
     }
   ]

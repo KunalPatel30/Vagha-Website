@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
 import Header from "./Component/Header";
@@ -25,21 +25,25 @@ function App() {
   const userId = localStorage.getItem("userid")
 
 
-  const updateCartCount = async () => {
+  const updateCartCount = useCallback(async () => {
+    if (!userId) return;
+    try {
       const response = await axios.get(`http://localhost:3000/cart?userId=${userId}`);
       const cartItems = response.data;
 
       let total = 0;
       cartItems.forEach(item => {
-          total += item.qty;
+        total += item.qty;
       });
-
       setCartCount(total);
-  };
+    } catch (error) {
+      console.error("Error fetching cart:", error);
+    }
+  }, [userId]);
 
   useEffect(() => {
     updateCartCount();
-  }, [userId]);
+  }, [updateCartCount]);
 
   return (
     <>

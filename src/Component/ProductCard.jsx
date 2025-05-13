@@ -29,8 +29,8 @@ function ProductCard({ limit, updateCartCount }) {
         // Step 1: Get all cart items for current user
         const res = await axios.get(`http://localhost:3000/cart?userId=${userId}`);
     
-        // Step 2: Check if this product already exists in their cart (by name)
-        const existingProduct = res.data.find(item => item.name === product.name);
+        // Step 2: Check if this product already exists in their cart (by id)
+        const existingProduct = res.data.find(item => item.id === product.id);
 
         // Step 3: Clone product and remove unwanted images
         const cleanProduct = { ...product };
@@ -41,7 +41,7 @@ function ProductCard({ limit, updateCartCount }) {
     
         if (!existingProduct) {
             // Create new cart item with unique id
-            await axios.post('http://localhost:3000/cart', { userId, ...cleanProduct, id: Date.now().toString() }); // ensure unique cart item ID
+            await axios.post('http://localhost:3000/cart', { userId, ...cleanProduct }); // ensure unique cart item ID
             
         } else {
             // Update qty if it already exists
