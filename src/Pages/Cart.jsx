@@ -54,7 +54,7 @@ function Cart({ updateCartCount }) {
     // Total Qty, Total Amount, Shipping Charge
     // const cartTotalQty = allData.reduce((acc, data) => acc + data.qty, 0);
     const cartTotalAmount = allData.reduce((acc, data) => acc + data.price * data.qty, 0);
-    const shippingCharge = 45;
+    const shippingCharge = cartTotalAmount > 2000 ? 0 : 45;
 
 
   return (
@@ -164,7 +164,7 @@ function Cart({ updateCartCount }) {
                                                 <span className="text-black">Shipping Charge</span>
                                             </div>
                                             <div className="col-md-6 text-right">
-                                                <strong className="text-black">₹{shippingCharge}</strong>
+                                                <strong className="text-black">{shippingCharge === 0 ? "Free" : `₹${shippingCharge}`}</strong>
                                             </div>
                                         </div>
                                         <div className="row mb-5">
