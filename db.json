@@ -102,16 +102,6 @@
   ],
   "cart": [
     {
-      "id": "1684367846573",
-      "userId": "1745994314979",
-      "name": "Green Dhoti Collection",
-      "image": "/src/assets/images/products/Green Dhoti Collection-1.png",
-      "description": "",
-      "price": "650",
-      "alt": "Green",
-      "qty": 1
-    },
-    {
       "id": "1684319839617",
       "userId": "1745994314979",
       "name": "Maharaja Collection Yellow & Red",
@@ -120,6 +110,26 @@
       "price": "800",
       "alt": "Yellow & Red",
       "qty": 1
+    }
+  ],
+  "coupons": [
+    {
+      "id": 1,
+      "code": "SAVE10",
+      "type": "percentage",
+      "value": 10
+    },
+    {
+      "id": 2,
+      "code": "FLAT100",
+      "type": "flat",
+      "value": 100
+    },
+    {
+      "id": 3,
+      "code": "FREESHIP",
+      "type": "freeship",
+      "value": 0
     }
   ]
 }

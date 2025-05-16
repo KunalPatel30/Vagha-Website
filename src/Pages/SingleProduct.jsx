@@ -94,6 +94,7 @@ function SingleProduct({ updateCartCount }) {
   return (
     <>
         <div className="product-card-wrapper">
+            <h2 className="product-title-mobile">{item.name}</h2>
             <div className="product-card">
                 {/* card left */}
                 <div className="product-imgs">
@@ -130,7 +131,7 @@ function SingleProduct({ updateCartCount }) {
                 </div>
                 {/* card right */}
                 <div className="product-content">
-                    <h2 className="product-title">{item.name}</h2>
+                    <h2 className="product-title-desktop">{item.name}</h2>
                     <div className = "product-rating">
                         <i className = "fas fa-star" style={{color: "#3b5d50"}}></i>
                         <i className = "fas fa-star" style={{color: "#3b5d50"}}></i>

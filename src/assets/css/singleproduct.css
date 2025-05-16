@@ -37,13 +37,32 @@
 .product-card-wrapper .product-content{
     padding: 2rem 1rem;
 }
-.product-card-wrapper .product-title{
+.product-card-wrapper .product-title-desktop{
+    display: block;
     font-size: 2.5rem;
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
     color: #12263a;
     margin: 1rem 0;
+}
+.product-card-wrapper .product-title-mobile{
+    display: none;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0.5rem 2rem;
+    text-align: center;
+}
+@media only screen and (max-width: 991px){
+    .product-card-wrapper .product-title-desktop{
+        display: none;
+    }
+    .product-card-wrapper .product-title-mobile{
+        display: block;
+    }
 }
 /* .product-card-wrapper .product-title::after{
     content: "";
